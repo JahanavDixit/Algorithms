@@ -65,6 +65,4 @@ for(int k=ob.s.size();k<ob.f.size();k++)
 }
 if(ob.flag == 1)
 cout << '\n' << "The string does not exist ! " << endl;
-
-
 }
