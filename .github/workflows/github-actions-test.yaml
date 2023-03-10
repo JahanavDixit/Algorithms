@@ -1,0 +1,14 @@
+name: Algoriths repo Actions Test
+run-name: ${{github.actor}} , Testing out github actions
+on : [push]
+jobs:
+  Linting C++ Code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out Reoi
+        uses: actions/checkout@v3
+
+      - name: Linting C++ files
+        uses: cpp-linter/cpp-linter-action@v2
+        env:
+          DEFAULT_BRANCH: main
