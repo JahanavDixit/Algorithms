@@ -5,10 +5,28 @@ jobs:
   cpp-linter:
     runs-on: ubuntu-latest
     steps:
-      - name: Checking out Reoi
+      - name: Checking out Repo
         uses: actions/checkout@v3
 
       - name: Linting C++ files
         uses: cpp-linter/cpp-linter-action@v2
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake g++
+
+      - name: Build
+        run: |
+          for dir in */; do
+            if [ -e "$dir/CMakeLists.txt" ]; then
+              echo "Building $dir..."
+              mkdir -p "$dir/build"
+              cd "$dir/build"
+              cmake ..
+              make
+              cd ../..
+            fi
+          done
         env:
           DEFAULT_BRANCH: main
