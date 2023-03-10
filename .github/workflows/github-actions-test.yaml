@@ -2,7 +2,7 @@ name: Algoriths repo Actions Test
 run-name: ${{github.actor}} , Testing out github actions
 on : [push]
 jobs:
-  Linting C++ Code:
+  cpp-linter:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out Reoi
