@@ -8,6 +8,7 @@
 
 using namespace std;
 
+
 class GCD{
 private:
 int a,b,res;
